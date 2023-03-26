@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/underline.xml" value="0.1045" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.37447916666666664" />
         <entry key="app/src/main/res/layout/child_item.xml" value="0.3875" />
         <entry key="app/src/main/res/layout/iiste_item.xml" value="0.3875" />

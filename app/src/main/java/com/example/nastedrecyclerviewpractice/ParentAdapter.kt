@@ -2,9 +2,6 @@ package com.example.nastedrecyclerviewpractice
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nastedrecyclerviewpractice.databinding.ParentItemBinding
@@ -32,10 +29,13 @@ class ParentAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun setData(parentItem: ParentItem, position: Int) {
-            binding.parentLogoIv.setImageResource(parentItem.logo)
-            binding.parentTitleTv.text = parentItem.title
-
-
+            binding.NameArea.text = parentItem.exerciseName
+            binding.TypeArea.text = parentItem.exerciseType
+            binding.totalSetArea.text = "총 " + parentItem.totalSet.toString() + "set, "
+            binding.totalKgArea.text = "총 " + parentItem.totalKG + "kg, "
+            binding.bestKgArea.text = "최고 " + parentItem.bestKg + "kg, "
+            binding.totalCountArea.text = "총 " + parentItem.totalCount + "회"
+//
             binding.nestedRV.setHasFixedSize(true)
             binding.nestedRV.layoutManager = LinearLayoutManager(itemView.context)
             val adapter = ChildAdapter(parentItem.mList)

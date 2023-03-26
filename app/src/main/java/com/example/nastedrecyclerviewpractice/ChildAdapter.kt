@@ -29,8 +29,10 @@ class ChildAdapter(private val childList: List<ChildItem>) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun recordData(childItem: ChildItem, position: Int) {
-            binding.childTitleTv.text = childList[position].title
-            binding.childLogoIv.setImageResource(childList[position].logo)
+            binding.recordSetItem.text = childList[position].setNo.toString() + "번째 세트"
+            binding.recordKgItem.text = childList[position].kg.toString() + "kg".toString()
+            binding.recordCountItem.text = childList[position].count.toString() + "회"
+
         }
     }
 }

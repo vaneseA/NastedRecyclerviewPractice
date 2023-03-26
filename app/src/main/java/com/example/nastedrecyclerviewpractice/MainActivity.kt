@@ -26,63 +26,87 @@ class MainActivity : AppCompatActivity() {
     private fun addDataToList() {
 
         val childItems1 = ArrayList<ChildItem>()
-        childItems1.add(ChildItem("C", R.drawable.c))
-        childItems1.add(ChildItem("C#", R.drawable.csharp))
-        childItems1.add(ChildItem("Java", R.drawable.java))
-        childItems1.add(ChildItem("C++", R.drawable.cplusplus))
+        childItems1.add(ChildItem(1, 20, 20))
+        childItems1.add(ChildItem(2, 30, 15))
+        childItems1.add(ChildItem(3, 40, 10))
+        childItems1.add(ChildItem(4, 20, 20))
         parentList.add(
             ParentItem(
-                "Game Development",
-                R.drawable.console,
+                "벤치프레스",
+                "가슴",
+                childItems1.size,
+                getTotalWeight(childItems1).toString(),
+                getMaxKg(childItems1).toString(),
+                getTotalCount(childItems1).toString(),
                 childItems1
             )
         )
 
-        val childItem2 = ArrayList<ChildItem>()
-        childItem2.add(ChildItem("Kotlin", R.drawable.kotlin))
-        childItem2.add(ChildItem("XML", R.drawable.xml))
-        childItem2.add(ChildItem("Java", R.drawable.java))
+        val childItems2 = ArrayList<ChildItem>()
+        childItems2.add(ChildItem(1, 20, 20))
+        childItems2.add(ChildItem(2, 30, 15))
+        childItems2.add(ChildItem(3, 40, 10))
         parentList.add(
             ParentItem(
-                "Android Development",
-                R.drawable.android,
-                childItem2
+                "딥스",
+                "가슴",
+                childItems2.size,
+                getTotalWeight(childItems2).toString(),
+                getMaxKg(childItems2).toString(),
+                getTotalCount(childItems2).toString(),
+                childItems2
             )
         )
-        val childItem3 = ArrayList<ChildItem>()
-        childItem3.add(ChildItem("JavaScript", R.drawable.javascript))
-        childItem3.add(ChildItem("HTML", R.drawable.html))
-        childItem3.add(ChildItem("CSS", R.drawable.css))
+        val childItems3 = ArrayList<ChildItem>()
+        childItems3.add(ChildItem(1, 20, 20))
+        childItems3.add(ChildItem(2, 18, 15))
+        childItems3.add(ChildItem(3, 15, 10))
+        childItems3.add(ChildItem(4, 20, 20))
+        childItems3.add(ChildItem(5, 20, 20))
         parentList.add(
             ParentItem(
-                "Front End Web",
-                R.drawable.front_end,
-                childItem3
+                "덤벨프레스",
+                "가슴",
+                childItems3.size,
+                getTotalWeight(childItems3).toString(),
+                getMaxKg(childItems3).toString(),
+                getTotalCount(childItems3).toString(),
+                childItems3
             )
         )
-        val childItem4 = ArrayList<ChildItem>()
-        childItem4.add(ChildItem("Julia", R.drawable.julia))
-        childItem4.add(ChildItem("Python", R.drawable.python))
-        childItem4.add(ChildItem("R", R.drawable.r))
-        parentList.add(
-            ParentItem(
-                "Artificial Intelligence",
-                R.drawable.ai,
-                childItem4
-            )
-        )
-        val childItem5 = ArrayList<ChildItem>()
-        childItem5.add(ChildItem("Java", R.drawable.java))
-        childItem5.add(ChildItem("Python", R.drawable.python))
-        childItem5.add(ChildItem("PHP", R.drawable.php))
-        childItem5.add(ChildItem("JavaScript", R.drawable.javascript))
-        parentList.add(
-            ParentItem(
-                "Back End Web",
-                R.drawable.backend,
-                childItem5
-            )
-        )
+
+
     }
 
+    fun getTotalWeight(childItems: ArrayList<ChildItem>): Int {
+        var totalWeight = 0
+
+        for (item in childItems) {
+            totalWeight += item.kg
+        }
+
+        return totalWeight
+    }
+
+    fun getTotalCount(childItems: ArrayList<ChildItem>): Int {
+        var totalCount = 0
+
+        for (item in childItems) {
+            totalCount += item.count
+        }
+
+        return totalCount
+    }
+
+    fun getMaxKg(childItems: ArrayList<ChildItem>): Int? {
+        var maxKg: Int? = null
+
+        for (item in childItems) {
+            if (maxKg == null || item.kg > maxKg) {
+                maxKg = item.kg
+            }
+        }
+
+        return maxKg
+    }
 }
