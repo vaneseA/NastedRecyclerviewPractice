@@ -35,7 +35,7 @@ class ParentAdapter(
             binding.totalKgArea.text = "총 " + parentItem.totalKG + "kg, "
             binding.bestKgArea.text = "최고 " + parentItem.bestKg + "kg, "
             binding.totalCountArea.text = "총 " + parentItem.totalCount + "회"
-//
+
             binding.nestedRV.setHasFixedSize(true)
             binding.nestedRV.layoutManager = LinearLayoutManager(itemView.context)
             val adapter = ChildAdapter(parentItem.mList)

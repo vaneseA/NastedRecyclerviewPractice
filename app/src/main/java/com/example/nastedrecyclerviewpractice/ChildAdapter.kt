@@ -30,7 +30,7 @@ class ChildAdapter(private val childList: List<ChildItem>) :
 
         fun recordData(childItem: ChildItem, position: Int) {
             binding.recordSetItem.text = childList[position].setNo.toString() + "번째 세트"
-            binding.recordKgItem.text = childList[position].kg.toString() + "kg".toString()
+            binding.recordKgItem.text = childList[position].kg.toString() + "kg"
             binding.recordCountItem.text = childList[position].count.toString() + "회"
 
         }
